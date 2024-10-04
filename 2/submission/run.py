@@ -3,8 +3,10 @@
 import numpy as np
 import pandas as pd
 import pickle
+from scripts.data_utils import get_connectome
+from scripts.classification_models import LogRegPCA
 
-X = np.load('./data/ts_cut/HCPex/predict.npy')
+X = np.load('data/ts_cut/HCPex/predict.npy')
 X = get_connectome(X)
 
 with open('model.pkl', 'rb') as file:

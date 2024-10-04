@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pickle
 
 from sklearn.model_selection import train_test_split
@@ -10,10 +8,10 @@ from scripts.classification_models import LogRegPCA
 
 
 
-bnu_series_path = '../data/ts_cut/HCPex/bnu{}.npy'
-bnu_labels_path = '../data/ts_cut/HCPex/bnu.csv'
-ihb_series_path = '../data/ts_cut/HCPex/ihb.npy'
-ihb_labels_path = '../data/ts_cut/HCPex/ihb.csv'
+bnu_series_path = 'data/ts_cut/HCPex/bnu{}.npy'
+bnu_labels_path = 'data/ts_cut/HCPex/bnu.csv'
+ihb_series_path = 'data/ts_cut/HCPex/ihb.npy'
+ihb_labels_path = 'data/ts_cut/HCPex/ihb.csv'
 
 X_bnu = np.concatenate([np.load(bnu_series_path.format(i)) for i in (1, 2)], axis=0)
 Y_bnu = pd.read_csv(bnu_labels_path)
