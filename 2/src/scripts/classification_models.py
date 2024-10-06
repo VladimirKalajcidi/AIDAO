@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import zscore
 from sklearn.decomposition import PCA
-from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
@@ -10,7 +10,7 @@ from sklearn.metrics import f1_score
 class LogRegPCA:
     def __init__(self, pca=True):
         self.pca = PCA() if pca else None
-        self.model = LogisticRegression()
+        self.model = DecisionTreeClassifier()
 
     def model_training(self, x, y):
         x = self.preprocess(x)
@@ -54,3 +54,4 @@ class LogRegPCA:
         vecs = vecs.reshape((x.shape[0], -1))
 
         return vecs
+
